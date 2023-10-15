@@ -64,7 +64,38 @@ def cal_field(input_pattern):
 
 
 ✔️ Autoencoder를 이용한 electrode pattern 예측 base code
-RGB code 예시로
+```python
+input = layers.Input(shape=(41, 41, 3))
+
+# Encoder
+x = layers.Conv2D(512, (3, 3), activation="relu", padding="same")(input)
+x = layers.MaxPooling2D((2, 2), padding="same")(x)
+x = layers.Conv2D(128, (3, 3), activation="relu", padding="same")(x)
+x = layers.MaxPooling2D((2, 2), padding="same")(x)
+
+# Decoder
+x = layers.Conv2DTranspose(128, (3, 3), activation="relu", padding="same")(x)
+x = layers.UpSampling2D((2, 2))(x)
+x = layers.Conv2DTranspose(512, (3, 3), activation="relu", padding="same")(x)
+x = layers.UpSampling2D((2, 2))(x)
+x = layers.Conv2D(3, (3, 3), activation="sigmoid", padding="same")(x)
+x = layers.Cropping2D(cropping=((3, 0), (3, 0)), data_format=None)(x)
+
+# Autoencoder
+autoencoder = Model(input, x)
+autoencoder.compile(optimizer="adam", loss="binary_crossentropy")
+autoencoder.summary()
+```
+
+Train
+```python
+autoencoder.fit(x=[array],y=[array],epochs=[number])
+```
+
+Prediction
+```python
+predictions = autoencoder.predict([array])
+```
 
 ✔️ 예측 결과 예시 
 

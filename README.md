@@ -63,7 +63,7 @@ def cal_field(input_pattern):
 ```
 
 
-✔️ Autoencoder를 이용한 electrode pattern 예측 base code (input=41x41x3, output=41x41x3, 해당 dimension은 예시)
+✔️ Convolutional autoencoder를 이용한 electrode pattern 예측 base code (input=41x41x3, output=41x41x3, 해당 dimension은 예시)
 
 Model
 ```python

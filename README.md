@@ -91,7 +91,7 @@ autoencoder.summary()
 
 Train
 ```python
-autoencoder.fit(x=[array],y=[array],epochs=[number])
+autoencoder.fit(x=[array],y=[array],epochs=number)
 ```
 
 Prediction

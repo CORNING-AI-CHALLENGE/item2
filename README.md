@@ -1,4 +1,4 @@
-# Corning AI challenge _ ITEM 2 
+# 2023 Corning AI challenge _ ITEM 2 
 
 ### 🏴‍☠️ 생성형 AI를 이용한 inverse problem 해결 방안 제안
 
